@@ -1,0 +1,63 @@
+<%- include('partials/header'); -%>
+    <form  method="POST" class = "sign-up-card" >
+        <img src="/images/signup.png" alt="" id="abc123">
+        <h1>Create New User</h1> 
+        <div>
+            <label for="displayName">Name</label>
+            <input type="text" id="displayName" name="displayName" placeholder="Enter Your Name"  value="<%= oldInput.displayName %>"required>
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input class="
+            <%= validationErrors.find(e=>e.param === 'username') ? "invalid":"" %>
+
+
+            <% if(errorMessage){ %>
+                <% if(errorMessage == 'User Already Exists'){ %>
+                    invalid
+                <% } %>
+            <% } %>"
+            
+            id="email" 
+            name="username" 
+            placeholder="Enter Your Email" 
+            value="<%= oldInput.username %>" 
+            >   
+        </div>
+         
+         
+         <div class="email error">
+            <%= validationErrors.find(e=>e.param === 'username') ? "Please enter valid email.":"" %>
+        </div>
+        <div class="email error">
+            <% if(errorMessage){ %>
+                <% if(errorMessage == 'User Already Exists'){ %>
+                    <%=errorMessage  %>
+                <% } %>
+            <% } %>
+        </div>
+        <div>
+            <label for="password">Create Password</label>
+            <input class="<%= validationErrors.find(e=>e.param === 'confirmPassword') ? "invalid":"" %>"
+            type="password" id="password" name="password" placeholder="Password" value="<%= oldInput.password %>" >
+        </div>
+        <div class="email error">
+            <%= validationErrors.find(e=>e.param === 'password') ? "The minimum password length is 5 characters.":"" %>
+        </div>
+        <div>
+            <label for="confirmPassword">Confirm Password</label>
+            <input class="<%= validationErrors.find(e=>e.param === 'confirmPassword') ? "invalid":"" %>" 
+            type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" value="<%= oldInput.confirmPassword %>" >
+        </div>
+        <div class="password error">
+            <% if(errorMessage){ %>
+                <% if(errorMessage == 'Password Have To Match'){ %>
+                    <%=errorMessage  %>
+                <% } %>
+            <% } %>
+        </div>
+        <button id= "submit-btn" type="submit " class="btn">SIGN UP</button>
+        
+    </form>
+
+    <%- include('partials/footer'); -%>

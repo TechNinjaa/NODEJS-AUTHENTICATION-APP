@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>NodeJs Authentication Apps</title>
+ 
+  <link rel="stylesheet" href="/css/styles.css">
+
+</head>
+<body>
+  <nav>
+    <h1><a href="/">NodeJs Authentication Apps</a></h1>
+    <ul>
+        <% if(user){ %>
+        <li><a href="" class="ab12">Profile</a></li>
+        <li><a href="/logout" class="ab12">Log out</a></li>
+        <li><a href="/changepassword" class="btn" id="a123">Reset Password</a></li>
+        <%}else{ %>
+        <li><a href="/login" id="abc">Log in</a></li>
+        <li><a href="/signup" class="btn">Sign up</a></li>
+        <% } %>
+    </ul>
+  </nav>
+  

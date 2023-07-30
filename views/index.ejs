@@ -1,0 +1,22 @@
+  <%- include('partials/header'); -%>
+<header>
+  
+  <% if(user){ %>
+  <div class="smoothie">
+    <img src="/images/user-profile2.png" alt="">
+  </div>
+  <div class="headings">
+    <h2>Welcome, <%= user.displayName %></h2>
+    <h3>You Have Done Well..</h3>
+  </div>
+  <% }else{ %>
+    <div class="smoothie">
+      <img src="/images/user-profile.png" alt="">
+    </div>
+    <div class="headings">
+      <h2>Hi User,<%= user %> </h2>
+      <h3>lets get started...</h3>
+    </div>
+    <% } %>  
+</header>
+  <%- include('partials/footer'); -%>
